@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +14,13 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final _emailContorller = TextEditingController();
   final _passwordContorller = TextEditingController();
+  final _confirmPasswordContorller =TextEditingController();
 
   @override
   void dispose() {
     _emailContorller.dispose();
     _passwordContorller.dispose();
+    _confirmPasswordContorller.dispose();
     super.dispose();
   }
 
@@ -48,7 +52,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[300],
+      backgroundColor: Color.fromARGB(255, 196, 33, 82),
       // appBar: AppBar(
       //   centerTitle: true,
       //   title: const Text('LOgIN'),
@@ -59,7 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(
-                Icons.person_add_alt_1_sharp,
+                Icons.key,
                 size: 100,
               ),
 
@@ -135,6 +139,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
+                const SizedBox(
+                height: 10,
+              ),
               // confirme password
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -147,11 +154,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   child:  Padding(
                     padding: const EdgeInsets.only(left: 18),
                     child: TextField(
-                      controller: _passwordContorller,
+                      controller: _confirmPasswordContorller,
                       obscureText: true,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Confirm Password',
+                        
+                        filled: true
                       ),
                     ),
                   ),
@@ -170,7 +179,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: Container(
                       padding: const EdgeInsets.all(17),
                       decoration: BoxDecoration(
-                        color: Colors.deepPurple,
+                        color: Color.fromARGB(255, 0, 0, 0),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: const Center(
@@ -203,7 +212,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
-                        color: Colors.blue,
+                        color: Colors.white
                       ),
                     ),
                   )
