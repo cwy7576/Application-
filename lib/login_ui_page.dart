@@ -12,41 +12,29 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+// text contoroller
+
   final _emailContorller = TextEditingController();
   final _passwordContorller = TextEditingController();
 
-  Future singIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: _emailContorller.text.trim(),
-      password: _passwordContorller.text.trim(),
-    );
-    // .catchError((msg){
-    //   // ignore: avoid_print
-    //   print("Error: " + msg.toString());
-    // }))
-    //     .user;
-
-    // return firebaseUser;
-  }
-
-  @override
+@override
   void dispose() {
     _emailContorller.dispose();
     _passwordContorller.dispose();
     super.dispose();
   }
+// sing function 
+  Future singIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: _emailContorller.text.trim(),
+      password: _passwordContorller.text.trim(),
+    );
 
-  // validateForm() {
-  //   if (!_emailContorller.text.contains("@")) {
-  //     print(_emailContorller.text);
-  //     print("Email address is not Valid.");
-  //   }  else if (_passwordContorller.text.length < 6) {
-  //     print(_passwordContorller.text);
-  //     print("Password must be atleast 6 Characters.");
-  //   } else {
-  //     singIn();
-  //   }
-  // }
+  }
+
+
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +46,7 @@ class _LoginPageState extends State<LoginPage> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(
@@ -100,11 +89,11 @@ class _LoginPageState extends State<LoginPage> {
                     border: Border.all(color: Colors.white),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Padding(
+                  child:  Padding(
                     padding: EdgeInsets.only(left: 18),
                     child: TextField(
-                      // controller: _emailContorller,
-                      decoration: InputDecoration(
+                      controller: _emailContorller,
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Email',
                       ),
@@ -124,12 +113,12 @@ class _LoginPageState extends State<LoginPage> {
                     border: Border.all(color: Colors.white),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.only(left: 18),
+                  child:  Padding(
+                    padding: const EdgeInsets.only(left: 18),
                     child: TextField(
-                      // controller: _passwordContorller,
+                      controller: _passwordContorller,
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Password',
                       ),
