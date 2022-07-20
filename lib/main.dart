@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:login_ui/main_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:login_ui/login.dart';
+
+ 
 
 
 
@@ -20,9 +22,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return    const MaterialApp(
+    return    MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:MainPage()
+      home:LoginScreen()
     );
   }
 }
