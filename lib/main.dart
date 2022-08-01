@@ -6,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:login_ui/pages/main_page.dart';
 
 import 'culculator/home.dart';
+import 'culculator/new calc.dart';
 import 'phone_verificaton/login.dart';
 
 void main() async {
@@ -24,9 +25,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
         debugShowCheckedModeBanner: false, 
-        home: HomePahe()
+        home: SimpleCalculator()
         );
   }
 }
