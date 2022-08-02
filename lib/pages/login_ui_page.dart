@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:google_fonts/google_fonts.dart';
 
 import 'ForgotPasswordPage.dart';
@@ -13,6 +14,31 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool _isHidden = true;
+
+  void _togglePasswordView() {
+    setState(() {
+      _isHidden = !_isHidden;
+    });
+  }
+  //   bool _obscureText = false;
+  // late String _password;
+
+  // // Toggles the password show status
+  // void _toggle() {
+  //   setState(() {
+  //     _obscureText = !_obscureText;
+  //   });
+  // }
+
+  //   @override
+  // void initState() {
+  //   // TODO: implement initState
+    
+  //   super.initState();
+  // }
+
+  
   final _formKey = GlobalKey<FormState>();
 
 // GlobalKey>FormState> formkey = GlobalKey<FormState>();
@@ -40,6 +66,7 @@ class _LoginPageState extends State<LoginPage> {
     // navigator pup loadinf
     Navigator.of(context).pop();
   }
+  
 
   void dispose() {
     _emailContorller.dispose();
@@ -51,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 2, 173, 165),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       // appBar: AppBar(
       //   centerTitle: true,
       //   title: const Text('LOgIN'),
@@ -62,100 +89,158 @@ class _LoginPageState extends State<LoginPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(
-                Icons.face,
-                size: 100,
-              ),
+              // const Icon(
+              //   Icons.login,
+              //   size: 100,
+              // ),
 
               const SizedBox(
-                height: 80,
+                height: 190,
               ),
 
               // hellow again
 
               Text(
-                'Hello Again!',
-                style: GoogleFonts.pressStart2p(
+                'Hello Dear!',
+                style: GoogleFonts.montaga(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.bold,
+                    fontSize: 50,
                   ),
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
-              Text(
-                'Welcome Back You Have Missed Here!',
-                style: GoogleFonts.lobster(
-                  textStyle: const TextStyle(
-                    fontSize: 27,
-                  ),
-                ),
+              // Text(
+              //   'Welcome Back You Have Missed Here!',
+              //   style: GoogleFonts.lobster(
+              //     textStyle: const TextStyle(
+              //       fontSize: 27,
+              //     ),
+              //   ),
 
-                // style: TextStyle(
-                //   fontSize: 20,
-                // ),
-              ),
+              //   // style: TextStyle(
+              //   //   fontSize: 20,
+              //   // ),
+              // ),
               const SizedBox(
                 height: 50,
               ),
 
               // text email
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    border: Border.all(color: Colors.white),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 18),
-                    child: TextField(
-                      key: _formKey,
-                      controller: _emailContorller,
-                      decoration: const InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'Email',
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              //   child: Container(
+              //     decoration: BoxDecoration(
+              //       color: Colors.grey[200],
+              //       border: Border.all(color: Colors.white),
+              //       borderRadius: BorderRadius.circular(12),
+              //     ),
+              //     child: Padding(
+              //       padding: const EdgeInsets.only(left: 18),
+              //       child: TextField(
+              //         key: _formKey,
+              //         controller: _emailContorller,
+              //         decoration: const InputDecoration(
+              //           border: InputBorder.none,
+              //           hintText: 'Email',
+              //           prefixIcon: Icon(Icons.email,
+              //           size: 20,
+              //           color: Colors.black,)
+              //         ),
+                      
+              //       ),
+              //     ),
+              //   ),
+              // ),
               // password TExt FIeld
               const SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    border: Border.all(color: Colors.white),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 18),
+              Center(
                     child: TextField(
-                      controller: _passwordContorller,
-                      obscureText: true,
-                      decoration: const InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'Password',
+                  controller: _emailContorller,
+                  cursorColor: Color.fromARGB(255, 0, 0, 0),
+                  decoration: InputDecoration(
+                    focusedBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2.0),
+                    ),
+                    hintText: 'Email',
+                    prefixIcon: Icon(Icons.email,
+                        size: 20,
+                        color: Colors.black,),
+
+                    hintStyle: TextStyle(
+                      color: Colors.grey[600],
+                      letterSpacing: 1.0,
+                    ),
+                  ),
+                )),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              //   child: Container(
+              //     decoration: BoxDecoration(
+              //       color: Colors.grey[200],
+              //       border: Border.all(color: Colors.white),
+              //       borderRadius: BorderRadius.circular(12),
+              //     ),
+              //     child: Padding(
+              //       padding: const EdgeInsets.only(left: 18),
+              //       child: TextField(
+              //         controller: _passwordContorller,
+              //         obscureText: true,
+                      
+              //         decoration: const InputDecoration(
+              //           border: InputBorder.none,
+              //           hintText: 'Password',
+              //            prefixIcon: Icon(Icons.lock,
+              //           size: 20,
+              //           color: Colors.black,),
+              //         ),
+                      
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              Center(
+                  child: TextField(
+                    cursorColor: Color.fromARGB(255, 0, 0, 0),
+                    controller: _passwordContorller,
+                    obscureText: _isHidden,
+                    decoration: InputDecoration(
+                      focusedBorder: const OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2.0),
+                      ),
+                      hintText: 'Password',
+                      prefixIcon: Icon(Icons.lock,
+                        size: 20,
+                        color: Colors.black,),
+                      
+                      hintStyle: TextStyle(
+                        color: Colors.grey[600],
+                        letterSpacing: 1.0,
+                      ),
+                      suffixIcon: GestureDetector(
+                        onTap: _togglePasswordView,
+                        child: Icon(
+                          _isHidden ? Icons.visibility_off : Icons.visibility,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              TextFormField(
-                // The validator receives the text that the user has entered.
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter Email and Password';
-                  } else
-                    return null;
-                },
-              ),
+              // TextFormField(
+              //   // The validator receives the text that the user has entered.
+              //   validator: (value) {
+              //     if (value == null || value.isEmpty) {
+              //       return 'Please enter Email and Password';
+              //     } else
+              //       return null;
+              //   },
+              // ),
               const SizedBox(
                 height: 10.0,
               ),
@@ -180,28 +265,28 @@ class _LoginPageState extends State<LoginPage> {
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
-                            color: Colors.white,
+                            color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         )),
                   ],
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  // Validate returns true if the form is valid, or false otherwise.
-                  if (_formKey.currentState!.validate()) {
-                    // If the form is valid, display a snackbar. In the real world,
-                    // you'd often call a server or save the information in a database.
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Processing Data')),
-                    );
-                  }
-                },
-                child: const Text('Submit'),
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     // Validate returns true if the form is valid, or false otherwise.
+              //     if (_formKey.currentState!.validate()) {
+              //       // If the form is valid, display a snackbar. In the real world,
+              //       // you'd often call a server or save the information in a database.
+              //       ScaffoldMessenger.of(context).showSnackBar(
+              //         const SnackBar(content: Text('Processing Data')),
+              //       );
+              //     }
+              //   },
+              //   child: const Text('Submit'),
+              // ),
+              // const SizedBox(
+              //   height: 10.0,
+              // ),
               //sing in buttom
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 17.0),
@@ -241,7 +326,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 0, 0, 0),
                       ),
                     ),
                   )
