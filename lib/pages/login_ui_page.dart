@@ -14,6 +14,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  
   bool _isHidden = true;
 
   void _togglePasswordView() {
@@ -284,10 +285,10 @@ class _LoginPageState extends State<LoginPage> {
               //   },
               //   child: const Text('Submit'),
               // ),
-              // const SizedBox(
-              //   height: 10.0,
-              // ),
-              //sing in buttom
+              const SizedBox(
+                height: 10.0,
+              ),
+              // sing in buttom
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 17.0),
                   child: GestureDetector(
