@@ -46,8 +46,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 196, 33, 82),
-        elevation: 1.0,
+backgroundColor: Color.fromARGB(255, 245, 245, 245),
+      // appBar: AppBar(        elevation: 1.0,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -60,7 +60,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               style: TextStyle(fontSize: 20),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Padding(

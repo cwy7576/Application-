@@ -2,7 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:login_ui/login.dart';
+import 'package:login_ui/phone_verificaton/login.dart';
 
 
 

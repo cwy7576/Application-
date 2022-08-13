@@ -2,7 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:login_ui/home.dart';
+import 'package:login_ui/phone_verificaton/home.dart';
 import 'package:pinput/pinput.dart';
 
 class OTPScreen extends StatefulWidget {
@@ -31,7 +31,7 @@ class _OTPScreenState extends State<OTPScreen> {
     return Scaffold(
       key: _scaffoldkey,
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 238, 87, 0),
+        backgroundColor: const Color.fromARGB(255, 238, 87, 0),
         title: const Text('OTP Verification'),
       ),
       body: Column(
@@ -41,7 +41,7 @@ class _OTPScreenState extends State<OTPScreen> {
             child: Center(
               child: Text(
                 'Verify +252-${widget.phone}',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
               ),
             ),
           ),

@@ -20,6 +20,7 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.16.2 <3.0.0"
 
+
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
@@ -36,6 +37,16 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_auth: ^3.4.1
   cloud_firestore: ^3.2.1
+  pinput: ^2.2.11
+  sms_autofill: ^2.2.0
+  google_fonts: ^3.0.1
+  avatar_glow: ^2.0.2
+  color: ^3.0.0
+  math_expressions: ^2.3.1
+  postgres: ^2.4.6
+  http: ^0.13.5
+  
+
 
 dev_dependencies:
   flutter_test:

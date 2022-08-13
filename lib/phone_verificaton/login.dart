@@ -3,7 +3,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:login_ui/Home2.dart';
+import 'package:login_ui/phone_verificaton/Home2.dart';
 
 
 

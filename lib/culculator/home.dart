@@ -55,7 +55,7 @@ class _HomePaheState extends State<HomePahe> {
     
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.all(18),
+        padding: EdgeInsets.all(15.0),
         child: OutlinedButton(
           onPressed: () => btnclicked(btnval),
           

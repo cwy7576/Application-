@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'login.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -14,7 +16,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
@@ -22,7 +24,7 @@ class _HomeState extends State<Home> {
               await FirebaseAuth.instance.signOut();
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
                   (route) => false);
             },
           )
@@ -33,9 +35,10 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-
+  
   @override
   void initState() {
+
     super.initState();
     uid = FirebaseAuth.instance.currentUser!.uid;
   }

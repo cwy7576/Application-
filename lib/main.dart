@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:postgres/postgres.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 // import 'package:login_ui/phone_verificaton/Home2.dart';
@@ -8,6 +9,7 @@ import 'package:login_ui/pages/main_page.dart';
 import 'culculator/home.dart';
 import 'culculator/new calc.dart';
 import 'phone_verificaton/login.dart';
+import 'views/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,9 +27,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return  const MaterialApp(
         debugShowCheckedModeBanner: false, 
-        home: SimpleCalculator()
+        home: Homepage()
         );
   }
 }
